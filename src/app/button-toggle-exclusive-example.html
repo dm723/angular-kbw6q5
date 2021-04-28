@@ -1,0 +1,43 @@
+<div class="example-selected-value">Calculated UCR</div>
+<mat-button-toggle-group
+  #group2="matButtonToggleGroup"
+  style="border: 0px; padding-bottom: 10px;"
+>
+  <mat-button-toggle
+    *ngFor="let ucr of calculated_ucrs"
+    [value]="ucr.code"
+    class="ucr-button"
+    [ngClass]="ucr.enabled ? 'enabled-ucr-button' : ''"
+    [disabled]="!ucr.enabled"
+    [style.background-color]="group2.value === ucr.code ? '#1f7a8c' : ucr.enabled? ucr.color : '#cccccc'"
+    [style.border-color]="group2.value === ucr.code ? '#0d1b2a' : ucr.color"
+    [style.box-shadow]="group2.value === ucr.code ? '0px 8px 8px -6px black' : ''"
+    >{{ucr.code}}</mat-button-toggle
+  >
+</mat-button-toggle-group>
+
+<div class="example-selected-value">Selected value: {{group2.value}}</div>
+
+<div class="example-selected-value" style="margin-top: 90px">Proposed UCR</div>
+<mat-button-toggle-group
+  #group1="matButtonToggleGroup"
+  style="border: 0px; padding-bottom: 10px;"
+>
+  <mat-button-toggle
+    *ngFor="let ucr of proposed_ucrs"
+    [value]="ucr.code"
+    class="ucr-button"
+    [ngClass]="ucr.enabled ? 'enabled-ucr-button' : ''"
+    [disabled]="!ucr.enabled"
+    [style.background-color]="group1.value === ucr.code ? '#1f7a8c' : ucr.enabled? ucr.color : '#cccccc'"
+    [style.border-color]="group1.value === ucr.code ? '#0d1b2a' : ucr.color"
+    [style.box-shadow]="group1.value === ucr.code ? '0px 8px 8px -6px black' : ''"
+    >{{ucr.code}}</mat-button-toggle
+  >
+</mat-button-toggle-group>
+
+<div class="example-selected-value">Selected value: {{group1.value}}</div>
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

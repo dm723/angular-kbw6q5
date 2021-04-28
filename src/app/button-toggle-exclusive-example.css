@@ -1,0 +1,14 @@
+.example-selected-value {
+  margin: 15px 0;
+}
+
+.ucr-button{
+   width: 40px; color: white;
+   border-radius: 5px;
+   margin-right: 3px;
+   border: 1px solid;
+}
+
+.enabled-ucr-button:hover{
+  box-shadow: 0px 8px 8px -6px black;
+}
